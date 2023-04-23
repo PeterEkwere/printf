@@ -8,7 +8,7 @@
 void print_chr(va_list arguments)
 {
 	int len;
-	char s = (char)va_arg(arguments, int);
+	char s = va_arg(arguments, int);
 	int count = 0;
 
 	if (s == '\0')
