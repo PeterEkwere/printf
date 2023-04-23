@@ -21,13 +21,22 @@
 typedef struct PrintArg
 {
 	char *format;
-	void (*handler_func)(va_list);
+	int (*handler_func)(va_list);
 } PrintArg;
 
-void handle_format_specifier(char format, va_list arguments);
+#define F_MINUS1
+#define F_PLUS2
+#define F_ZERO4
+#define F_HASH8
+#define F_SPACE16
+
+
+int handle_format_specifier(char format, va_list arguments);
 int  _printf(const char *format, ...);
-void s_print(va_list arguments);
-void print_ch(va_list arguments);
+int s_print(va_list arguments);
+int print_ch(va_list arguments);
+int double_print(va_list arguments);
+int int_print(va_list arguments);
 
 
 extern PrintArg  output_converter[];

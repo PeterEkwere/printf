@@ -5,9 +5,8 @@
  * the printf function
  * Return: void
  */
-void print_ch(va_list arguments)
+int print_ch(va_list arguments)
 {
-	int len;
 	char s = va_arg(arguments, int);
 	int count = 0;
 
@@ -15,6 +14,6 @@ void print_ch(va_list arguments)
 	{
 		write(STDOUT_FILENO, "(null)", 6);
 	}
-	len = sizeof(char);
-	count = count + write(STDOUT_FILENO, &s, len);
+	count = count + write(1, &s, 1);
+	return (0);
 }

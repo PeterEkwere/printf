@@ -23,7 +23,6 @@ int _printf(const char *format, ...)
 		return (0);
 	}
 	va_start(arguments, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%' && format[i + 1] == 'c')
@@ -36,11 +35,15 @@ int _printf(const char *format, ...)
 			handle_format_specifier('s', arguments);
 			i++;
 		}
+		else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
+		{
+			handle_format_specifier('d', arguments);
+			i++;
+		}
 		else
 		{
-			count = count + write(STDOUT_FILENO, &format[i], sizeof(char));
+			count = count + write(STDOUT_FILENO, &format[i], 1);
 		}
-	}
-	va_end(arguments);
+	} va_end(arguments);
 	return (count);
 }

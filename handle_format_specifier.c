@@ -8,11 +8,12 @@
  * Return: void
  */
 
-void handle_format_specifier(char format, va_list arguments)
+int handle_format_specifier(char format, va_list arguments)
 {
 	PrintArg output_converter[] = {
 		{"s", s_print},
 		{"c", print_ch},
+		{"d", double_print},
 		{NULL, NULL}
 };
 	int i = 0;
@@ -26,4 +27,5 @@ void handle_format_specifier(char format, va_list arguments)
 		}
 		i++;
 	}
+	return (0);
 }
