@@ -1,10 +1,11 @@
 #include "main.h"
 /**
- * double_print - is a function that prints a variable for the d flag
+ * int_print - is a function that prints a variable for the i
+ * format specifier
  * @arguments: is a list of arguments passed to the function printf
  * Return: void
  */
-int double_print(va_list arguments)
+int int_print(va_list arguments)
 {
 	int d = va_arg(arguments, int);
 	int digit[20];
@@ -36,6 +37,5 @@ int double_print(va_list arguments)
 	{
 		c = digit[j];
 		count = count + write(1, &c, 1);
-	}
-	return (count);
+	} return (count);
 }

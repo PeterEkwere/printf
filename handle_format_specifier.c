@@ -14,6 +14,7 @@ int handle_format_specifier(char format, va_list arguments)
 		{"s", s_print},
 		{"c", print_ch},
 		{"d", double_print},
+		{"i", int_print},
 		{NULL, NULL}
 };
 	int i = 0;
