@@ -10,9 +10,17 @@ int _printf(const char *format, ...)
 	int count = 0;
 	int i = 0;
 
-	if (format == NULL)
+	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 	{
 		return (-1);
+	}
+	else if (format[i] == '%' && !format[i + 1])
+	{
+		return (-1);
+	}
+	else if (!format[i])
+	{
+		return (0);
 	}
 	va_start(arguments, format);
 

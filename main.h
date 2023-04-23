@@ -27,7 +27,7 @@ typedef struct PrintArg
 void handle_format_specifier(char format, va_list arguments);
 int  _printf(const char *format, ...);
 void s_print(va_list arguments);
-void print_chr(va_list arguments);
+void print_ch(va_list arguments);
 
 
 extern PrintArg  output_converter[];

@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * print_chr - is a function that handles the c specifier
+ * print_ch - is a function that handles the c specifier
  * @arguments: is a list of arguments passed to
  * the printf function
  * Return: void
  */
-void print_chr(va_list arguments)
+void print_ch(va_list arguments)
 {
 	int len;
 	char s = (char)va_arg(arguments, int);

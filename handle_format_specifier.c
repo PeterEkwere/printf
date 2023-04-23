@@ -12,7 +12,7 @@ void handle_format_specifier(char format, va_list arguments)
 {
 	PrintArg output_converter[] = {
 		{"s", s_print},
-		{"c", print_chr},
+		{"c", print_ch},
 		{NULL, NULL}
 };
 	int i = 0;
