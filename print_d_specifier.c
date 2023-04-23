@@ -18,10 +18,6 @@ int double_print(va_list arguments)
 		count = count + write(1, "-", 1);
 		d = -d;
 	}
-	if (d == INT_MIN)
-	{
-		count = count + write(1, "-2147483648", 11);
-	}
 	if (d == 0)
 	{
 		count = count + write(1, "0", 1);
