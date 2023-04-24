@@ -13,13 +13,14 @@ int  s_print(va_list arguments)
 
 	if (s == NULL)
 	{
-		return (-1);
+		s = "(null)";
 	}
 	len = 0;
 	while (s[len] != '\0')
 	{
 		len++;
-		count = count + write(1, &s[len - 1], 1);
+		write(1, &s[len], 1);
+		count++;
 	}
 	return (count);
 }

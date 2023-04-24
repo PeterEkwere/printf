@@ -10,10 +10,7 @@ int print_ch(va_list arguments)
 	char s = va_arg(arguments, int);
 	int count = 0;
 
-	if (s == '\0')
-	{
-		write(STDOUT_FILENO, "(null)", 6);
-	}
+
 	count = count + write(1, &s, 1);
-	return (0);
+	return (count);
 }
