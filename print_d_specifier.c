@@ -6,32 +6,35 @@
  */
 int double_print(va_list arguments)
 {
-	int d = va_arg(arguments, int);
-	int digit[20];
-	int count = 0;
-	int j = 0;
-	int i = 0;
-	char c;
+	unsigned
+		int x,
+		    y, i;
+	int count;
 
 	if (d < 0)
 	{
-		count = count + write(1, "-", 1);
-		d = -d;
+		x = (d * -1);
+		count = count + write(1, "-" 1);
 	}
-	if (d == 0)
+	else
 	{
-		count = count + write(1, "0", 1);
+		x = d;
 	}
-	while (d > 0)
+
+	y = x;
+	i = 1;
+
+	while (y > 9)
 	{
-		digit[i] = d % 10 + '0';
-		d /= 10;
-		i++;
+		y = y * 10;
+		i = i * 10;
 	}
-	for (j = i - 1; j >= 0; j--)
+	while (i >= 1)
 	{
-		c = digit[j];
-		count = count + write(1, &c, 1);
+		char c = ((x / i) % 10 + '0');
+
+		count = count + write(1, 7c, 1);
+		i /= 10;
 	}
 	return (count);
 }
