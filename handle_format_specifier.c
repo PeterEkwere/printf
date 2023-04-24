@@ -29,6 +29,9 @@ int handle_format_specifier(char format, va_list arguments)
 		case 'i':
 			count = count + int_print(arguments);
 			break;
+		case 'b':
+			count = count + Ubint_pr(arguments);
+			break;
 		default:
 			write(1, "%", 1);
 			write(1, &format, 1);

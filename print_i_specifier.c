@@ -1,37 +1,40 @@
 #include "main.h"
 /**
- * int_print - is a function that prints a variable for the i
- * format specifier
- * @arguments: is a list of arguments passed to the function printf
- * Return: void
+ * int_print - is a function that prints a varible argumen
+ * @arguments: is a list of variables passed to the function
+ * Return: count
  */
 int int_print(va_list arguments)
 {
-	int d = va_arg(arguments, int);
-	int digit[20];
+	unsigned int x, y, i;
 	int count = 0;
-	int j = 0;
-	int i = 0;
-	char c;
+
+	int d = va_arg(arguments, int);
 
 	if (d < 0)
 	{
+		x = (d * -1);
 		count = count + write(1, "-", 1);
-		d = -d;
 	}
-	if (d == 0)
+	else
 	{
-		count = count + write(1, "0", 1);
+		x = d;
 	}
-	while (d > 0)
+
+	y = x;
+	i = 1;
+
+	while (y > 9)
 	{
-		digit[i] = d % 10 + '0';
-		d /= 10;
-		i++;
+		y = y / 10;
+		i = i * 10;
 	}
-	for (j = i - 1; j >= 0; j--)
+	while (i >= 1)
 	{
-		c = digit[j];
+		char c = ((x / i) % 10 + '0');
+
 		count = count + write(1, &c, 1);
+
+		i = i / 10;
 	} return (count);
 }
