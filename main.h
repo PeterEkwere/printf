@@ -21,7 +21,6 @@ int double_print(va_list arguments);
 int int_print(va_list arguments);
 
 
-extern PrintArg  output_converter[];
 extern int count;
 
 #endif
