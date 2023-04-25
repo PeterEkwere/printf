@@ -10,15 +10,15 @@
 
 int handle_format_specifier(char format, va_list arguments)
 {
-	PrintArg output_converter[] = {
+	static const PrintArg output_converter[] = {
+		{'%', percent_pr},
 		{'s', s_print},
 		{'c', print_ch},
 		{'b', Ubint_pr},
 		{'d', double_print},
 		{'i', int_print},
-		{'\0', NULL}
 };
-	int i = 0;
+	unsigned int i = 0;
 	int count = 0;
 
 	if ('%' == format)
@@ -27,20 +27,17 @@ int handle_format_specifier(char format, va_list arguments)
 		return (count);
 	}
 
-	while (output_converter[i].format != '\0')
+	while (i < (sizeof(output_converter) / sizeof(PrintArg)))
 	{
 		if (output_converter[i].format == format)
 		{
-			output_converter[i].handler_func(arguments);
-			break;
+			return (output_converter[i].handler_func(arguments));
 		}
 		i++;
 	}
-	if (output_converter[i].format == '\0')
-	{
-		write(1, "%", 1);
-		write(1, &format, 1);
-		count = count + 2;
-	}
+
+	write(1, "%", 1);
+	write(1, &format, 1);
+	count = count + 2;
 	return (count);
 }

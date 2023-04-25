@@ -18,8 +18,8 @@ int  s_print(va_list arguments)
 	len = 0;
 	while (s[len] != '\0')
 	{
-		len++;
 		write(1, &s[len], 1);
+		len++;
 		count++;
 	}
 	return (count);

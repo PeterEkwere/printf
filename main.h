@@ -38,6 +38,7 @@ int print_ch(va_list arguments);
 int double_print(va_list arguments);
 int int_print(va_list arguments);
 int Ubint_pr(va_list arguments);
+int percent_pr(va_list arguments);
 
 extern int count;
 
