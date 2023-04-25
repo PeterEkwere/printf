@@ -32,13 +32,17 @@ typedef struct PrintArg
 } PrintArg;
 
 int handle_format_specifier(char format, va_list arguments);
-int  _printf(const char *format, ...);
+int _printf(const char *format, ...);
 int s_print(va_list arguments);
 int print_ch(va_list arguments);
 int double_print(va_list arguments);
 int int_print(va_list arguments);
 int Ubint_pr(va_list arguments);
 int percent_pr(va_list arguments);
+int print_X(va_list arguments)
+int print_hex(va_list arguments)
+int print_o(va_list arguments)
+int uint_print(va_list arguments)
 
 
 extern PrintArg output_converter;
