@@ -10,33 +10,37 @@
 
 int handle_format_specifier(char format, va_list arguments)
 {
+	PrintArg output_converter[] = {
+		{'s', s_print},
+		{'c', print_ch},
+		{'b', Ubint_pr},
+		{'d', double_print},
+		{'i', int_print},
+		{'\0', NULL}
+};
+	int i = 0;
 	int count = 0;
 
-	switch (format)
+	if ('%' == format)
 	{
-		case '%':
-			write(1, "%", 1);
-			break;
-		case 's':
-			count = count + s_print(arguments);
-			break;
-		case 'c':
-			count = count + print_ch(arguments);
-			break;
-		case 'd':
-			count = count + double_print(arguments);
-			break;
-		case 'i':
-			count = count + int_print(arguments);
-			break;
-		case 'b':
-			count = count + Ubint_pr(arguments);
-			break;
-		default:
-			write(1, "%", 1);
-			write(1, &format, 1);
-			count = count + 2;
-			break;
+		write(1, "%", 1);
+		return (count);
 	}
-			return (count);
+
+	while (output_converter[i].format != '\0')
+	{
+		if (output_converter[i].format == format)
+		{
+			output_converter[i].handler_func(arguments);
+			break;
+		}
+		i++;
+	}
+	if (output_converter[i].format == '\0')
+	{
+		write(1, "%", 1);
+		write(1, &format, 1);
+		count = count + 2;
+	}
+	return (count);
 }

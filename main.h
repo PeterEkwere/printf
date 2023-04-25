@@ -27,9 +27,9 @@
  */
 typedef struct PrintArg
 {
-	char *format;
+	char format;
 	int (*handler_func)(va_list);
-}
+} PrintArg;
 
 int handle_format_specifier(char format, va_list arguments);
 int  _printf(const char *format, ...);
