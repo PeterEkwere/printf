@@ -17,6 +17,10 @@ int handle_format_specifier(char format, va_list arguments)
 		{'b', Ubint_pr},
 		{'d', double_print},
 		{'i', int_print},
+		{'u', uint_print},
+		{'o', print_o},
+		{'X', print_X},
+		{'x', print_hex}
 };
 	unsigned int i = 0;
 	int count = 0;
