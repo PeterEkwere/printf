@@ -7,21 +7,21 @@
  */
 int print_o(va_list arguments)
 {
-	static const char octal[] = "01234567";
+	static const char octal[] = "0123456789ABCDEF";
 	static char buffer[1024];
-
+	
 	int count = 0;
 	char *ptr = &buffer[1023];
+	unsigned int a = va_arg(arguments, unsigned int);
 
 	*ptr = '\0';
-	unsigned int a = va_arg(arguments, unsigned int)
 
 	do {
 		*--ptr = octal[a % 8];
+		a = a / 8;
 	} while (a != 0);
 
 	while (*ptr != '\0')
-
 	{
 		count = count + write(1, ptr, 1);
 		ptr++;

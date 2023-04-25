@@ -39,10 +39,10 @@ int double_print(va_list arguments);
 int int_print(va_list arguments);
 int Ubint_pr(va_list arguments);
 int percent_pr(va_list arguments);
-int print_X(va_list arguments)
-int print_hex(va_list arguments)
-int print_o(va_list arguments)
-int uint_print(va_list arguments)
+int print_X(va_list arguments);
+int print_hex(va_list arguments);
+int print_o(va_list arguments);
+int uint_print(va_list arguments);
 
 
 extern PrintArg output_converter;

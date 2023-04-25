@@ -7,14 +7,13 @@
  */
 int print_X(va_list arguments)
 {
-	static const char hex[] = "0123456789ABCDEF;
+	static const char hex[] = "0123456789ABCDEF";
 
 	static char buffer[1024];
 	int count = 0;
 	char *ptr = &buffer[1023];
-
-	*ptr = '\0';
 	unsigned int a = va_arg(arguments, unsigned int);
+	*ptr = '\0';
 
 	do {
 		*--ptr = hex[a % 16];
@@ -23,7 +22,7 @@ int print_X(va_list arguments)
 
 	while (*ptr != '\0')
 	{
-		count = count write(1, ptr, 1);
+		count = count +  write(1, ptr, 1);
 		ptr++;
 	}
 

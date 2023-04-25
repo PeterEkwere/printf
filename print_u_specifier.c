@@ -14,7 +14,7 @@ int uint_print(va_list arguments)
 	int index;
 	int index2;
 	int count = 0;
-	int b = va_arg(argments, int);
+	int b = va_arg(arguments, int);
 	char c;
 
 	if (b == 0)
@@ -24,7 +24,7 @@ int uint_print(va_list arguments)
 		return (count);
 	}
 
-	for (index = 0, index < 10; index++)
+	for (index = 0; index < 10; index++)
 	{
 		num[index] = b / a;
 		b = b % a;
