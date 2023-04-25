@@ -40,6 +40,8 @@ int int_print(va_list arguments);
 int Ubint_pr(va_list arguments);
 int percent_pr(va_list arguments);
 
+
+extern PrintArg output_converter;
 extern int count;
 
 #endif

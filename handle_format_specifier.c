@@ -10,7 +10,7 @@
 
 int handle_format_specifier(char format, va_list arguments)
 {
-	static const PrintArg output_converter[] = {
+	const PrintArg output_converter[] = {
 		{'%', percent_pr},
 		{'s', s_print},
 		{'c', print_ch},
