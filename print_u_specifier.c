@@ -2,7 +2,7 @@
 
 /**
  * uint_print - this is a function that checks for the u format specifier
- * @arguements: is a list of variables passed to the printf function
+ * @arguments: is a list of variables passed to the printf function
  * Return: count
  */
 int uint_print(va_list arguments)
