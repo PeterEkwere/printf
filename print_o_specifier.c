@@ -7,23 +7,18 @@
  */
 int print_o(va_list arguments)
 {
-	static
-		const char
-		octal[] =
-		"01234567";
+	static const char octal[] = "01234567";
+	static char buffer[1024];
 
 	int count = 0;
-	static char buffer[1024];
 	char *ptr = &buffer[1023];
-	unsigned int a = va_arg(arguments, unsigned int)
 
-		* ptr = '\0';
+	*ptr = '\0';
+	unsigned int a = va_arg(arguments, unsigned int)
 
 	do {
 		*--ptr = octal[a % 8];
-	}
-
-	while (a != 0);
+	} while (a != 0);
 
 	while (*ptr != '\0')
 
@@ -33,4 +28,3 @@ int print_o(va_list arguments)
 	}
 	return (count);
 }
-
