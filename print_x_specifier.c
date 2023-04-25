@@ -7,8 +7,9 @@
  */
 int print_hex(va_list arguments)
 {
-	static const char hex[] = "0123456789abcsef";
+	static const char hex[] = "0123456789abcdef";
 	static char buffer[1024];
+
 	int count = 0;
 	char *ptr = &buffer[1023];
 	unsigned int a = va_arg(arguments, unsigned int);

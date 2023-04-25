@@ -5,7 +5,6 @@
  * @arguements: is a list of variables passed to the printf function
  * Return: count
  */
-
 int uint_print(va_list arguments)
 {
 	int num[10];
