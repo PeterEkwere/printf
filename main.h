@@ -11,7 +11,25 @@
 #define F_ZERO4
 #define F_HASH8
 #define F_SPACE16
-
+/**
+ * struct PrintArg - is a datatype designed for format specifying
+ *
+ * @format: is format to be checked for in the printf
+ * @handler_func: is the corresponding function for the format
+ *
+ * Description:
+ * This structure is used to hold information related to format specifiers
+ * in the printf function. The format string in the format member is checked
+ * against the input string to determine whether or not the corresponding
+ * handler function should be called. The handler function pointer in the
+ * handler_func member points to the function that will be called if the
+ * format string matches the input string.
+ */
+typedef struct PrintArg
+{
+	char *format;
+	int (*handler_func)(va_list);
+}
 
 int handle_format_specifier(char format, va_list arguments);
 int  _printf(const char *format, ...);
