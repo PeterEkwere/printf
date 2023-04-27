@@ -1,3 +1,4 @@
+
 # Custom printf Function
 
 This is a C programming language project that implements a custom `printf` function similar to the standard library `printf` function. The project was developed by Peter Ekwere and Joy Emeh.
@@ -36,3 +37,6 @@ int main()
     return (0);
 }
 ```
+
+
+ ``` The author's of this project are Peter ekwere and joy Emeh ```
