@@ -1,69 +1,40 @@
-0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm
- a Spur for life                                                                    
-Write a function that produces output according to a format.                        
-You need to handle the following conversion specifiers:
-c
-s
-%                                                                                   
-                                                                                    
-1. Education is when you read the fine print. Experience is what you get if you don'
-t                                                                                   
-Handle the following conversion specifiers:
-d
-i
+Project Name: Custom printf Function
+This is a C programming language project that implements a custom printf function similar to the standard library printf function. The project was developed by Peter Ekwere and Joy Emeh.
 
-2. With a face like mine, I do better in print                                      
-Handle the following custom conversion specifiers:
-b: the unsigned int argument is converted to binary
+Files
+The project consists of the following files:
 
-3. What one has not experienced, one will never understand in print                 
-Handle the following conversion specifiers:
-u
-o
-x
-X
-                                                                                    
-4. Nothing in fine print is ever good news                                          
-Use a local buffer of 1024 chars in order to call write as little as possible.      
-                                                                                    
-5. My weakness is wearing too much leopard print                                    
-Handle the following custom conversion specifier:                     
+test.c: This file contains the main function that calls the custom printf function and prints the output to the console.
 
-6. How is the world ruled and led to war? Diplomats lie to journalists and believe t
-hese lies when they see them in print                                               
-Handle the following conversion specifier: p.                                       
-                                                                                    
-7. The big print gives and the small print takes away                               
-Handle the following flag characters for non-custom conversion specifiers: 
+_printf.c: This file contains the implementation of the custom printf function.
 
-8. Sarcasm is lost in print                                                         
-Handle the following length modifiers for non-custom conversion specifiers:         
-                                                                                    
-l                                                                                   
-h                                                                                   
-Conversion specifiers to handle: d, i, u, o, x, X                                   
-                                                                                    
-9. Print some money and give it to us for the rain forests                          
-Handle the field width for non-custom conversion specifiers.   
+handle_format_specifier.c: This file contains helper functions that handle specific format specifiers such as %d, %s, %x, etc.
 
-10. The negative is the equivalent of the composer's score, and the print the perfor
-mance                                                                               
-Handle the precision for non-custom conversion specifiers.                          
-                                                                                    
-11. It's depressing when you're still around and your albums are out of print       
-Handle the 0 flag character for non-custom conversion specifiers.     
+main.h: This is the header file for the project.
 
-12. Every time that I wanted to give up, if I saw an interesting textile, print what
- ever, suddenly I would see a collection                                            
-Handle the - flag character for non-custom conversion specifiers.                   
-                                                                                    
-13. Print is the sharpest and the strongest weapon of our party                     
-Handle the following custom conversion specifier: 
-r : prints the reversed string
+print_X_specifier.c: This file contains the implementation of the %X format specifier.
 
-14. The flood of print has turned reading into a process of gulping rather than savo
-ring                                                                                
-Handle the following custom conversion specifier:                                   
-R: prints the rot13'ed string                                                      
-15. *                                                                               
-All the above options work well together.  
+print_b_specifier.c: This file contains the implementation of the %b format specifier.
+
+print_c_specifier.c: This file contains the implementation of the %c format specifier.
+
+print_d_specifier.c: This file contains the implementation of the %d format specifier.
+
+print_i_specifier.c: This file contains the implementation of the %i format specifier.
+
+print_o_specifier.c: This file contains the implementation of the %o format specifier.
+
+print_p_specifier.c: This file contains the implementation of the %p format specifier.
+
+print_percent.c: This file contains the implementation of the %% format specifier.
+
+print_r_specifier.c: This file contains the implementation of the %r format specifier.
+
+print_s_specifier.c: This file contains the implementation of the %s format specifier.
+
+print_u_specifier.c: This file contains the implementation of the %u format specifier.
+
+print_x_specifier.c: This file contains the implementation of the %x format specifier.
+
+Usage
+To use the custom printf function in your C program, include the main.h header file and call the function using the following syntax:
