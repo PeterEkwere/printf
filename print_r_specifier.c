@@ -12,18 +12,22 @@ int print_r(va_list arguments)
 	int count = 0;
 	int len = 0;
 
-	char *s = va_arg(argumens, char *);
+	char *s = va_arg(arguments, char *);
 
 	while (s[len] != '\0')
 	{
 		len++;
 	}
 	if (s == NULL)
+	{
 		s = "(null)";
+	}
 	else
 	{
 		for (i = len - 1; i >= 0; i--)
-			count = count + write(1, string[i], 1);
+		{
+			count = count + write(1, &s[i], 1);
+		}
 	}
 	return (count);
 }

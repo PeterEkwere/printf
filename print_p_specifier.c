@@ -6,7 +6,7 @@
  * Return: count
  */
 
-int print_P(va_list arguments)
+int print_p(va_list arguments)
 {
 	void *ptr = va_arg(arguments, void *);
 
@@ -18,7 +18,7 @@ int print_P(va_list arguments)
 
 	for (i = 0; buffer[i] != '\0'; i++)
 	{
-		write(1, buffer[i], 1);
+		write(1, &buffer[i], 1);
 		count++;
 	}
 	return (count);

@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 
 #define F_MINUS1
@@ -43,6 +44,8 @@ int print_X(va_list arguments);
 int print_hex(va_list arguments);
 int print_o(va_list arguments);
 int uint_print(va_list arguments);
+int print_p(va_list arguments);
+int print_r(va_list arguments);
 
 
 extern PrintArg output_converter;

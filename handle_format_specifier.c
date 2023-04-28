@@ -20,7 +20,9 @@ int handle_format_specifier(char format, va_list arguments)
 		{'u', uint_print},
 		{'o', print_o},
 		{'X', print_X},
-		{'x', print_hex}
+		{'x', print_hex},
+		{'p', print_p},
+		{'r', print_r}
 };
 	unsigned int i = 0;
 	int count = 0;
